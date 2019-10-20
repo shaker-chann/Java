@@ -1,5 +1,7 @@
 package keyWord;
 
+import java.util.HashSet;
+
 /**
  * @Description
  * @Author shichao.chen
@@ -15,6 +17,9 @@ public class FinalDemo {
         String e = d + 2;
         System.out.println((a == c));
         System.out.println((a == e));
+        HashSet<String> hashSet = new HashSet<>();
+        hashSet.add("a");
+        hashSet.add("b");
 
     }
 }
