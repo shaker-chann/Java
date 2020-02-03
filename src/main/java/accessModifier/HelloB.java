@@ -7,6 +7,7 @@ package accessModifier;
  */
 public class HelloB extends HelloA
 {
+    C x = new C();
     public HelloB()
     {
         System.out.println("constructor B");
@@ -35,5 +36,18 @@ class HelloA
     static
     {
         System.out.println("static A");
+    }
+}
+class C{
+    public C()
+    {
+        System.out.println("constructor C");
+    }
+    {
+        System.out.println("I’m C class");
+    }
+    static
+    {
+        System.out.println("static C");
     }
 }
