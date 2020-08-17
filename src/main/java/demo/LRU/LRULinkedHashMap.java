@@ -9,7 +9,7 @@ import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * @Description LRU算法实现
- * @Author shichao.chen
+ * @Author csc
  * @Date 2019/9/17 16:36
  * @Version 1.0
  **/

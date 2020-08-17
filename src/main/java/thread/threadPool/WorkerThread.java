@@ -2,7 +2,7 @@ package thread.threadPool;
 
 /**
  * @Description
- * @Author shichao.chen
+ * @Author csc
  * @Date 2019/9/12 17:29
  * @Version 1.0
  **/

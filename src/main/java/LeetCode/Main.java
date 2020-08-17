@@ -2,7 +2,7 @@ package LeetCode;
 
 /**
  * @Description
- * @Author shichao.chen
+ * @Author csc
  * @Date 2019/8/13 14:42
  * @Version 1.0
  **/

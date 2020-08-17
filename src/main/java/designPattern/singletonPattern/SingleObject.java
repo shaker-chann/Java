@@ -1,17 +1,21 @@
-package singletonPattern;
+package designPattern.singletonPattern;
 
 /**
  * @Description
- * @Author shichao.chen
+ * @Author csc
  * @Date 2019/8/12 16:29
  * @Version 1.0
  **/
 public class SingleObject {
     private static SingleObject instance = new SingleObject();
-    private SingleObject(){};
-    public static SingleObject getInstance(){
+
+    private SingleObject() {
+    }
+
+    public static SingleObject getInstance() {
         return instance;
     }
 
-    public void show(){}
+    public void show() {
+    }
 }

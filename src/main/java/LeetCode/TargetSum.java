@@ -3,7 +3,7 @@ package LeetCode;
 /**
  * @ClassName target
  * @Description $
- * @Author shichao.chen
+ * @Author csc
  * @Date 2019/8/12 9:41
  * @Version 1.0
  **/

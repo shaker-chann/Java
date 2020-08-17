@@ -1,11 +1,13 @@
-package singletonPattern;
+package designPattern.singletonPattern;
 
 public enum SingletonEnum {
     INSTANCE;
-    private SingletonEnum(){
+
+    private SingletonEnum() {
         System.out.println("构造方法执行--");
     }
-    public SingletonEnum getInstance(){
+
+    public SingletonEnum getInstance() {
         return INSTANCE;
     }
 }

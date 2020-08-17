@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  * @Description
- * @Author shichao.chen
+ * @Author csc
  * @Date 2019/8/27 9:19
  * @Version 1.0
  **/
