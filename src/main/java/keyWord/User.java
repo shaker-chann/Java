@@ -12,6 +12,10 @@ public class User {
 
     public User(){}
 
+    public User(String id) {
+        this.id = id;
+    }
+
     public User(String name, int age) {
         this.name=name;
         this.age=age;
