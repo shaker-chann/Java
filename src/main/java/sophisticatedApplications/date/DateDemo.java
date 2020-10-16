@@ -1,4 +1,4 @@
-package sophisticatedApplications;
+package sophisticatedApplications.date;
 
 /*
  * 	D	一年中的第几天
@@ -34,20 +34,17 @@ public class DateDemo {
                 ("现在是yyyy年MM月dd日，时今年的第D天");
         System.out.println(sdf2.format(now));
 
-
         //创建一个代表2009年6月12日的Calendar对象
         Calendar calendar = Calendar.getInstance();
         calendar.set(2009, 6 - 1, 12);
-        calendar.set(Calendar.DAY_OF_MONTH,calendar.get(Calendar.DAY_OF_MONTH)+1);//让日期加1  
+        calendar.set(Calendar.DAY_OF_MONTH, calendar.get(Calendar.DAY_OF_MONTH) + 1);//让日期加1  
         System.out.println(calendar.get(Calendar.DATE));//加1之后的日期Top
-
-
 
         GregorianCalendar gcalendar = new GregorianCalendar();
         // 测试当前年份是否为闰年
         if (gcalendar.isLeapYear(gcalendar.get(Calendar.YEAR))) System.out.println("当前年份是闰年");
         else System.out.println("当前年份不是闰年");
-        gcalendar.setTime( new SimpleDateFormat("yyyyMMdd").parse("20090902"));
+        gcalendar.setTime(new SimpleDateFormat("yyyyMMdd").parse("20090902"));
         gcalendar.add(5, -Integer.parseInt("7"));
         System.out.println(new SimpleDateFormat("yyyyMMdd").format(gcalendar.getTime()));
         /*
@@ -61,8 +58,6 @@ public class DateDemo {
          *field参数表示年,月.日等.
          *amount参数表示要加减的数量.
          */
-
-
     }
 
 }
