@@ -7,7 +7,7 @@ package designPattern.singletonPattern;
  * @Version 1.0
  **/
 public class SingletonDCL {
-    private static SingletonDCL instance;
+    private static volatile SingletonDCL instance;
 
     private SingletonDCL() {
     }
@@ -19,5 +19,9 @@ public class SingletonDCL {
             }
         }
         return instance;
+    }
+
+    public static void main(String[] args) {
+
     }
 }
