@@ -3,7 +3,7 @@ package error;
 /**
  * @Description:
  * @PackageName: com.csc.demo1.other
- * @Author: 陈世超
+ * @Author: csc
  * @Create: 2020-09-30 14:05
  * @Version: 1.0
  */

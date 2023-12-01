@@ -3,7 +3,7 @@ package error.oom;
 /**
  * @Description:
  * @PackageName: com.csc.demo1.other
- * @Author: 陈世超
+ * @Author: csc
  * @Create: 2020-09-30 14:24
  * @Version: 1.0
  */
