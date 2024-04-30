@@ -7,6 +7,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * @Description: 不借助额外的线程去生成令牌（需要保证额外的线程的可靠性）;不借助第三方组件
+ * https://blog.csdn.net/crazymakercircle/article/details/130035504
  * @Author: csc
  * @Create: 2024-04-30
  */
