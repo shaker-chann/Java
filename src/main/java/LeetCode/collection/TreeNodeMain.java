@@ -34,6 +34,63 @@ public class TreeNodeMain {
         System.out.println(main.convertBST(root));
     }
 
+
+    public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> ans = new ArrayList<>();
+        Stack<TreeNode> stack = new Stack<>();
+        while (root != null || !stack.isEmpty()) {
+            while (root != null) {
+                stack.push(root);
+                root = root.left;
+            }
+            root = stack.pop();
+            ans.add(root.val);
+            root = root.right;
+        }
+
+
+        //Morris 遍历的优势在于 O(1) 空间复杂度，因为它不需要额外的栈或递归，仅依靠修改树结构来实现
+//        TreeNode pre = null;
+//        while (root != null) {
+//            if (root.left != null) {
+//                pre = root.left;
+//                while (pre.right != null) {
+//                    pre = pre.right;
+//                }
+//                pre.right = root;
+//                TreeNode tmp = root;
+//                root = root.left;
+//                tmp.left = null;
+//            } else {
+//                ans.add(root.val);
+//                root = root.right;
+//            }
+//        }
+
+
+//        Stack<TreeNode> stack = new Stack<>();
+//        while (root != null || !stack.isEmpty()) {
+//            while (root != null) {
+//                stack.push(root);
+//                root = root.left;
+//            }
+//            root = stack.pop();
+//            ans.add(root.val);
+//            root = root.right;
+//        }
+
+//        inorder(root, ans);
+        return ans;
+    }
+
+    private void inorder(TreeNode root, List<Integer> ans) {
+        if (root == null) return;
+        inorder(root.left, ans);
+        ans.add(root.val);
+        inorder(root.right, ans);
+    }
+
+
     TreeNode buildTree(Integer[] nums) {
         if (nums.length == 0) return new TreeNode(0);
         Deque<TreeNode> nodeQueue = new LinkedList<>();
