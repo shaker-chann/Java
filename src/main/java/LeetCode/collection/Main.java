@@ -17,12 +17,42 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-        LocalDate end = LocalDate.of(2023, 12, 31);
+        LocalDate end = LocalDate.of(2024, 9, 1);
         LocalDate now = LocalDate.now();
         System.out.println("attention:remain day is " + now.until(end, ChronoUnit.DAYS));
 
         Main main = new Main();
-        System.out.println(main.wordBreak("applepenapple", new ArrayList<>(Arrays.asList("apple", "pen"))));
+//        System.out.println(main.countSubstrings1("aaa"));
+//        System.out.println(Arrays.toString(main.calcEquation(new ArrayList<List<String>>() {{
+//            add(new ArrayList<String>() {{
+//                add("a");
+//                add("b");
+//            }});
+//            add(new ArrayList<String>() {{
+//                add("b");
+//                add("c");
+//            }});
+//            add(new ArrayList<String>() {{
+//                add("bc");
+//                add("cd");
+//            }});
+//        }}, new double[]{2.0, 3.0, 5.0}, new ArrayList<List<String>>() {{
+//            add(new ArrayList<String>() {{
+//                add("a");
+//                add("c");
+//            }});
+//            add(new ArrayList<String>() {{
+//                add("c");
+//                add("b");
+//            }});
+//            add(new ArrayList<String>() {{
+//                add("bc");
+//                add("cd");
+//            }});
+//        }})));
+//        System.out.println(main.findMedianSortedArrays(new int[]{1, 3}, new int[]{2}));
+//        System.out.println(main.lengthOfLIS(new int[]{10, 9, 2, 5, 3, 7, 101, 18}));
+//        System.out.println(main.wordBreak("applepenapple", new ArrayList<>(Arrays.asList("apple", "pen"))));
 //        System.out.println(main.findClosestElements(new int[]{1}, 1, 1).toString());
 //
 //        System.out.println(main.validateStackSequences(new int[]{1, 2, 3, 4, 5}, new int[]{4, 5, 3, 2, 1}));
@@ -33,10 +63,10 @@ public class Main {
 //        System.out.println(main.minOperations(new String[]{"d1/", "d2/", "../", "d21/", "./"}));
 //        System.out.println(main.maximumSwap(98368));
 //        System.out.println(main.maximumSwap(1993));
-        main.rectangleArea(new int[][]{{0, 0, 2, 2}, {1, 0, 2, 3}, {1, 0, 3, 1}});
+//        main.rectangleArea(new int[][]{{0, 0, 2, 2}, {1, 0, 2, 3}, {1, 0, 3, 1}});
 //        System.out.println(Arrays.toString(main.frequencySort(new int[]{2, 3, 1, 3, 2})));
 //        System.out.println(main.canPartitionKSubsets(new int[]{1, 2, 3, 4}, 3));
-        System.out.println(main.kSimilarity("abc", "bca"));
+//        System.out.println(main.kSimilarity("abc", "bca"));
 //        System.out.println(main.canFormArray(new int[]{91, 2, 4, 64, 5, 78, 12, 9}, new int[][]{{78, 12, 3}, {4, 64, 5}, {91, 2}}));
 //        System.out.println(main.getKthMagicNumber(5));
 //        main.setZeroes(new int[][]{{1, 1, 1}, {1, 0, 1}, {1, 1, 1}});
@@ -70,7 +100,7 @@ public class Main {
 //        System.out.println(main.trap(new int[]{4, 2, 0, 3, 2, 5}));
 //        main.sortColors(new int[]{2, 0, 2, 1, 1, 0});
 //        System.out.println(main.minWindow("ADOBECODEBANC", "ABC"));
-//        System.out.println(main.largestRectangleArea(new int[]{6, 1, 5, 2, 4, 5, 9, 3}));
+        System.out.println(main.largestRectangleArea(new int[]{6, 1, 5, 2, 4, 5, 9, 3}));
 //        System.out.println(Arrays.toString(main.dailyTemperatures(new int[]{73, 74, 75, 71, 69, 72, 76, 73})));
 //        System.out.println(main.findUnsortedSubarray(new int[]{2, 6, 4, 8, 10, 9, 15}));
 //        System.out.println(main.maximalRectangle4(new char[][]{{'1', '0', '1', '0', '0'}, {'1', '0', '1', '1', '1'}, {'1', '1', '1', '1', '1'}, {'1', '0', '0', '1', '0'}}));
@@ -82,10 +112,13 @@ public class Main {
 //        System.out.println(main.maxProfit(2, new int[]{3, 2, 6, 5, 0, 3}));
 //        System.out.println(main.maxCoins(new int[]{3, 1, 5, 8}));
 //        System.out.println(main.reconstructQueue(new int[][]{{7, 0}, {4, 4}, {7, 1}, {5, 0}, {6, 1}, {5, 2}}));
-//        System.out.println(main.findAnagrams("bbcb", "ccd").toString());2.454  3
+//        System.out.println(main.findAnagrams("bbbcb", "cb").toString());
 //        System.out.println(main.findDisappearedNumbers(new int[]{4, 3, 2, 7, 8, 2, 3, 1}).toString());
 //        System.out.println(main.subarraySum(new int[]{1, 2, 3, -1, -2}, 3));
 //        main.leastInterval(new char[]{'A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D'}, 2);
+//        ArrayList<List<Integer>> objects = new ArrayList<>();
+//        recursion(new int[]{1, 2, 3, 4}, 0, objects);
+//        System.out.println(objects.toString());
     }
 
     public int countSubstrings(String s) {
@@ -238,30 +271,30 @@ public class Main {
 
     //最大收益，最大的两个价差
     public int maxProfit(int[] prices) {
-        int n = prices.length;
-        int buy1 = -prices[0], sell1 = 0;
-        int buy2 = -prices[0], sell2 = 0;
-        for (int i = 1; i < n; ++i) {
-            buy1 = Math.max(buy1, -prices[i]);
-            sell1 = Math.max(sell1, buy1 + prices[i]);
-            buy2 = Math.max(buy2, sell1 - prices[i]);
-            sell2 = Math.max(sell2, buy2 + prices[i]);
-        }
-        return sell2;
-
-
-//        if (prices.length == 0) return 0;
-//        //0持有股票；1没有股票处于冷冻期；2没有股票非冷冻期
-//        int f0 = -prices[0], f1 = 0, f2 = 0;
-//        for (int i = 1; i < prices.length; i++) {
-//            int newF0 = Math.max(f0, f2 - prices[i]);
-//            int newF1 = f0 + prices[i];
-//            int newF2 = Math.max(f1, f2);
-//            f0 = newF0;
-//            f1 = newF1;
-//            f2 = newF2;
+//        int n = prices.length;
+//        int buy1 = -prices[0], sell1 = 0;
+//        int buy2 = -prices[0], sell2 = 0;
+//        for (int i = 1; i < n; ++i) {
+//            buy1 = Math.max(buy1, -prices[i]);
+//            sell1 = Math.max(sell1, buy1 + prices[i]);
+//            buy2 = Math.max(buy2, sell1 - prices[i]);
+//            sell2 = Math.max(sell2, buy2 + prices[i]);
 //        }
-//        return Math.max(f1, f2);
+//        return sell2;
+
+
+        if (prices.length == 0) return 0;
+        //0持有股票；1没有股票处于冷冻期；2没有股票非冷冻期
+        int f0 = -prices[0], f1 = 0, f2 = 0;
+        for (int i = 1; i < prices.length; i++) {
+            int newF0 = Math.max(f0, f2 - prices[i]);
+            int newF1 = f0 + prices[i];
+            int newF2 = Math.max(f1, f2);
+            f0 = newF0;
+            f1 = newF1;
+            f2 = newF2;
+        }
+        return Math.max(f1, f2);
     }
 
     public List<String> removeInvalidParentheses(String s) {
@@ -411,6 +444,10 @@ public class Main {
     int[] visited;
     boolean valid = true;
 
+    /**
+     * @param numCourses    数量
+     * @param prerequisites 先prerequisites[0]再prerequisites[1]的顺序
+     */
     public boolean canFinish(int numCourses, int[][] prerequisites) {
         int[] indeg = new int[numCourses];
         List<List<Integer>> edges = new ArrayList<>();
@@ -2114,22 +2151,58 @@ public class Main {
         return res;
     }
 
-    public static int maxProduct1(int[] nums) {
-
-        int max = Integer.MIN_VALUE, imax = 1, imin = 1;
+    public int lengthOfLIS(int[] nums) {
+        int piles = 0;
+        int[] top = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
-            if (nums[i] < 0) {
-                int tmp = imax;
-                imax = imin;
-                imin = tmp;
+            int left = 0;
+            int right = piles;
+            int poker = nums[i];
+            while (left < right) {
+                int mid = left + ((right - left) >> 1);
+                if (top[mid] >= poker) {
+                    right = mid;
+                } else {
+                    left = mid + 1;
+                }
             }
-            imax = Math.max(imax * nums[i], nums[i]);
-            imin = Math.min(imin * nums[i], nums[i]);
+            if (left == piles) piles++;
+            top[left] = poker;
+        }
+        System.out.println(Arrays.toString(top));
+        return piles;
+    }
 
-            max = Math.max(max, imax);
+    public int numSquares(int n) {
+        int[] dp = new int[n + 1];
+        for (int i = 1; i <= n; i++) {
+            int min = Integer.MAX_VALUE;
+            for (int j = 1; j * j <= i; j++) {
+                min = Math.min(dp[i - j * j], min);
+            }
+            dp[i] = min;
+        }
+        return dp[n];
+    }
+
+    public static int maxProduct1(int[] nums) {
+        int length = nums.length;
+        int[] maxRes = new int[length], minRes = new int[length];
+        maxRes[0] = nums[0];
+        minRes[0] = nums[0];
+        for (int i = 1; i < length; i++) {
+            int max = maxRes[i - 1] * nums[i];
+            int min = minRes[i - 1] * nums[i];
+            maxRes[i] = Math.max(Math.max(max, min), nums[i]);
+            minRes[i] = Math.min(Math.min(max, min), nums[i]);
+        }
+        int max = maxRes[0];
+        for (int i = 1; i < length; i++) {
+            if (maxRes[i] > max) max = maxRes[i];
         }
         return max;
     }
+
     //3,4,5,2
     public int maxProduct(int[] nums) {
         Arrays.sort(nums);
@@ -2151,6 +2224,353 @@ public class Main {
         }
         return res;
     }
+
+
+    public int coinChange(int[] coins, int amount) {
+        int[] dp = new int[amount + 1];
+        Arrays.fill(dp, 1, dp.length, Integer.MAX_VALUE);
+        for (int i = 0; i < coins.length; i++) {
+            for (int j = coins[i]; j <= amount; j++) {
+                if (dp[j - coins[i]] != Integer.MAX_VALUE) {
+                    dp[j] = Math.min(dp[j], dp[j - coins[i]] + 1);
+                }
+            }
+        }
+        if (dp[amount] != Integer.MAX_VALUE) return dp[amount];
+        return -1;
+    }
+
+    public int lengthOfLongestSubstring(String str) {
+        //滑动窗口
+        int n = str.length(), ret = 0;
+        char[] s = str.toCharArray(), arr = new char[128];
+        int left = 0, right = 0;
+        while (right < n) {
+            arr[s[right]]++;
+            while (arr[s[right]] > 1) {
+                arr[s[left++]]--;
+            }
+            right++;
+            ret = Math.max(ret, right - left);
+        }
+        return ret;
+    }
+
+    public String longestPalindrome(String s) {
+        if (s.length() <= 1) return s;
+        String res = "";
+        for (int i = 0; i < s.length(); i++) {
+            String s1 = palindrome(s, i, i);
+            String s2 = palindrome(s, i, i + 1);
+            res = (s1.length() > res.length()) ? s1 : res;
+            res = (s2.length() > res.length()) ? s2 : res;
+        }
+        return res;
+    }
+
+    private String palindrome(String s, int left, int right) {
+        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            left--;
+            right++;
+        }
+        return s.substring(left + 1, right);
+    }
+
+    public String decodeString(String s) {
+        StringBuilder res = new StringBuilder();
+        int multi = 0;
+        LinkedList<Integer> stack_multi = new LinkedList<>();
+        LinkedList<String> stack_res = new LinkedList<>();
+        for (Character c : s.toCharArray()) {
+            if (c == '[') {
+                stack_multi.addLast(multi);
+                stack_res.addLast(res.toString());
+                multi = 0;
+                res = new StringBuilder();
+            } else if (c == ']') {
+                StringBuilder tmp = new StringBuilder();
+                int cur_multi = stack_multi.removeLast();
+                for (int i = 0; i < cur_multi; i++) {
+                    tmp.append(res);
+                }
+                res = new StringBuilder(stack_res.removeLast() + tmp);
+            } else if (c >= '0' && c <= '9') {
+                multi = multi * 10 + Integer.parseInt(c + "");
+            } else {
+                res.append(c);
+            }
+        }
+        return res.toString();
+    }
+
+
+    public int[] twoSum(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int another = target - nums[i];
+            if (map.containsKey(another)) {
+                return new int[]{map.get(another), i};
+            }
+            map.put(nums[i], i);
+        }
+        return new int[0];
+    }
+
+    public double findMedianSortedArrays(int[] nums1, int[] nums2) {
+        int length1 = nums1.length, length2 = nums2.length;
+        int sumLen = length1 + length2, indexMin1 = sumLen / 2, indexMin2 = indexMin1;
+        int index1 = 0, index2 = 0, cur = 0, midSum = 0, minTemp = 0;
+        if (sumLen % 2 == 0) {
+            indexMin1--;
+        } else {
+            indexMin1 = -1;
+        }
+        while ((index1 < length1 || index2 < length2) && cur <= indexMin2) {
+            int a = index1 == length1 ? Integer.MAX_VALUE : nums1[index1];
+            int b = index2 == length2 ? Integer.MAX_VALUE : nums2[index2];
+            if (a < b) {
+                minTemp = a;
+                index1++;
+            } else {
+                minTemp = b;
+                index2++;
+            }
+            if (cur == indexMin2 || cur == indexMin1) {
+                midSum += minTemp;
+            }
+            cur++;
+        }
+        return indexMin1 == -1 ? midSum : midSum / 2.0;
+    }
+
+    public int islandPerimeter(int[][] grid) {
+        int ans = 0;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                if (grid[i][j] == 1) {
+                    ans += islandPerimeterDfs(i, j, grid);
+                }
+            }
+        }
+        return ans;
+    }
+
+    private int islandPerimeterDfs(int i, int j, int[][] grid) {
+        if (i < 0 || j < 0 || i >= grid.length || j >= grid[0].length || grid[i][j] == 0) return 1;
+        if (grid[i][j] == 2) return 0;
+        grid[i][j] = 2;
+        return islandPerimeterDfs(i, j + 1, grid) +
+                islandPerimeterDfs(i + 1, j, grid) +
+                islandPerimeterDfs(i - 1, j, grid) +
+                islandPerimeterDfs(i, j - 1, grid)
+                ;
+    }
+
+    public int maxAreaOfIsland(int[][] grid) {
+        int ans = 0;
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[0].length; j++) {
+                if (grid[i][j] == 1) {
+                    ans = Math.max(ans, maxAreaOfIslandDfs(i, j, grid));
+                }
+            }
+        }
+        return ans;
+    }
+
+    private int maxAreaOfIslandDfs(int i, int j, int[][] grid) {
+        if (i < 0 || j < 0 || i >= grid.length || j >= grid[0].length || grid[i][j] == 0) return 0;
+        grid[i][j] = 0;
+        return 1 + maxAreaOfIslandDfs(i, j + 1, grid) +
+                maxAreaOfIslandDfs(i + 1, j, grid) +
+                maxAreaOfIslandDfs(i - 1, j, grid) +
+                maxAreaOfIslandDfs(i, j - 1, grid)
+                ;
+    }
+
+    public double[] calcEquation1(List<List<String>> equations, double[] values, List<List<String>> queries) {
+        int nodeCount = 0;
+        Map<String, Integer> variables = new HashMap<>();
+        for (List<String> equation : equations) {
+            variables.putIfAbsent(equation.get(0), nodeCount++);
+            variables.putIfAbsent(equation.get(1), nodeCount++);
+        }
+
+        List<NodeIV>[] edge = new List[nodeCount];
+
+        for (double value : values) {
+
+        }
+        return null;
+    }
+
+    public double[] calcEquation(List<List<String>> equations, double[] values, List<List<String>> queries) {
+        //为每个节点赋值一个唯一的key
+        int nvars = 0;
+        Map<String, Integer> variables = new HashMap<>();
+        for (List<String> equation : equations) {
+            if (!variables.containsKey(equation.get(0)))
+                variables.put(equation.get(0), nvars++);
+            if (!variables.containsKey(equation.get(1)))
+                variables.put(equation.get(1), nvars++);
+        }
+        List<NodeIV>[] edges = new List[nvars];
+        for (int i = 0; i < nvars; i++) {
+            edges[i] = new ArrayList<>();
+        }
+        for (int i = 0; i < values.length; i++) {
+            List<String> stringList = equations.get(i);
+            Integer key0 = variables.get(stringList.get(0));
+            Integer key1 = variables.get(stringList.get(1));
+            edges[key0].add(new NodeIV(key1, values[i]));
+            edges[key1].add(new NodeIV(key0, 1.0 / values[i]));
+        }
+        double[] ans = new double[queries.size()];
+
+        for (int i = 0; i < queries.size(); i++) {
+            String query0 = queries.get(i).get(0);
+            String query1 = queries.get(i).get(1);
+            if (!variables.containsKey(query0) || !variables.containsKey(query1)) {
+                ans[i] = -1;
+                continue;
+            }
+            int key0 = variables.get(query0);
+            int key1 = variables.get(query1);
+            if (key0 == key1) {
+                ans[i] = 1.0;
+                continue;
+            }
+            Queue<Integer> queue = new LinkedList<>();
+            queue.offer(key0);
+            double[] ratios = new double[nvars];
+            Arrays.fill(ratios, -1.0);
+            ratios[key0] = 1.0;
+            while (!queue.isEmpty() && ratios[key1] < 0) {
+                Integer key = queue.poll();
+                for (NodeIV pair1 : edges[key]) {
+                    if (ratios[pair1.index] < 0) {
+                        ratios[pair1.index] = ratios[key] * pair1.value;
+                        queue.offer(pair1.index);
+                    }
+                }
+            }
+            ans[i] = ratios[key1];
+        }
+        return ans;
+    }
+
+    class NodeIV {
+        int index;
+        double value;
+
+        public NodeIV(int index, double value) {
+            this.index = index;
+            this.value = value;
+        }
+    }
+
+    public int countSubstrings1(String s) {
+        StringBuilder news = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            news.append('#').append(s.charAt(i));
+        }
+        news.append('#');
+        //回文半径数组
+        int[] circleRadiusArr = new int[news.length()];
+        // radiusIndex中心点；rMax以radiusIndex为中心回文的最大右位置的index，
+        int radiusIndex = 0, rMaxIndex = 0, ans = 0;
+        for (int i = 0; i < news.length(); i++) {
+            // i关于radiusIndex的对称位置
+            int mirror = 2 * radiusIndex - i;
+            circleRadiusArr[i] = i < rMaxIndex ? Math.min(circleRadiusArr[mirror], rMaxIndex - i) : 1;
+            //这里可以在news的首尾分别加上不等的字符来结束while；或者判断i + circleRadiusArr[i]的长度
+            while (i + circleRadiusArr[i] < news.length() && i - circleRadiusArr[i] >= 0 &&
+                    news.charAt(i + circleRadiusArr[i]) == news.charAt(i - circleRadiusArr[i])) {
+                ++circleRadiusArr[i];
+            }
+            if (i + circleRadiusArr[i] > rMaxIndex) {
+                radiusIndex = i;
+                rMaxIndex = i + circleRadiusArr[i];
+            }
+            ans += circleRadiusArr[i] / 2;
+        }
+        return ans;
+    }
+
+    public String longestPalindrome1(String s) {
+        StringBuilder news = new StringBuilder();
+        for (int i = 0; i < s.length(); i++) {
+            news.append('#').append(s.charAt(i));
+        }
+        news.append('#');
+        //某个位置的回文半径
+        int[] circleRadiusArr = new int[news.length()];
+        // radiusIndex中心点；rMax以radiusIndex为中心回文的最大右位置的index，
+        int radiusIndex = 0, rMaxIndex = 0;
+        for (int i = 0; i < news.length(); i++) {
+            // i关于radiusIndex的对称位置
+            int mirror = 2 * radiusIndex - i;
+            circleRadiusArr[i] = i < rMaxIndex ? Math.min(circleRadiusArr[mirror], rMaxIndex - i) : 1;
+            //这里可以在news的首尾分别加上不等的字符来结束while；或者判断i + circleRadiusArr[i]的长度
+            while (i + circleRadiusArr[i] < news.length() && i - circleRadiusArr[i] >= 0 &&
+                    news.charAt(i + circleRadiusArr[i]) == news.charAt(i - circleRadiusArr[i])) {
+                ++circleRadiusArr[i];
+            }
+            if (i + circleRadiusArr[i] > rMaxIndex) {
+                radiusIndex = i;
+                rMaxIndex = i + circleRadiusArr[i];
+            }
+        }
+
+        int maxCenter = 0, maxLen = 0;
+        for (int i = 0; i < circleRadiusArr.length; i++) {
+            if (circleRadiusArr[i] > maxLen) {
+                maxLen = circleRadiusArr[i];
+                maxCenter = i;
+            }
+        }
+        //实际的len为maxLen - 1，1为中心字符本身
+        int startIndex = (maxCenter - maxLen + 1) / 2;
+        return s.substring(startIndex, startIndex + maxLen - 1);
+    }
+
+    public static void recursion(int[] nums, int i, List<List<Integer>> res) {
+        if (i >= nums.length) return;
+        int size = res.size();
+        for (int j = 0; j < size; j++) {
+            List<Integer> newSub = new ArrayList<Integer>(res.get(j));
+            newSub.add(nums[i]);
+            res.add(newSub);
+        }
+        recursion(nums, i + 1, res);
+    }
+
+
+    public boolean exist(char[][] board, String word) {
+        for (int i = 0; i < board.length; i++) {
+            for (int j = 0; j < board[i].length; j++) {
+                if (dfs(board, i, j, word, 0)) return true;
+            }
+        }
+        return false;
+    }
+
+    private boolean dfs(char[][] board, int i, int j, String word, int p) {
+        if (p >= word.length()) return true;
+        if (i < 0 || i >= board.length ||
+                j < 0 || j >= board[0].length ||
+                word.charAt(p) != board[i][j]) return false;
+        board[i][j] += 27;
+        boolean ans = dfs(board, i + 1, j, word, p + 1) ||
+                dfs(board, i, j + 1, word, p + 1) ||
+                dfs(board, i - 1, j, word, p + 1) ||
+                dfs(board, i, j - 1, word, p + 1);
+        board[i][j] -= 27;
+        return ans;
+    }
+
+
+
 }
 
 
