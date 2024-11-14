@@ -15,7 +15,7 @@ public abstract class Limit {
     public long lastTime = System.currentTimeMillis();
     public final long capacity = 4;
     public final long speed = 2;
-    public final AtomicInteger count = new AtomicInteger(0);
+    public volatile AtomicInteger count = new AtomicInteger(0);
 
     /**
      * 获取令牌
@@ -31,7 +31,7 @@ public abstract class Limit {
         AtomicInteger limited = new AtomicInteger(0);
         AtomicInteger passed = new AtomicInteger(0);
         // 线程数
-        final int threads = 2;
+        final int threads = 4;
         // 每条线程的执行轮数
         final int turns = 7;
 
