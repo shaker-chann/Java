@@ -1,7 +1,5 @@
 package LeetCode.collection;
 
-import javafx.util.Pair;
-
 import java.time.LocalDate;
 import java.time.temporal.ChronoUnit;
 import java.util.*;
@@ -22,7 +20,6 @@ public class Main {
         System.out.println("attention:remain day is " + now.until(end, ChronoUnit.DAYS));
 
         Main main = new Main();
-//        System.out.println(main.countSubstrings1("aaa"));
 //        System.out.println(Arrays.toString(main.calcEquation(new ArrayList<List<String>>() {{
 //            add(new ArrayList<String>() {{
 //                add("a");
@@ -52,86 +49,53 @@ public class Main {
 //        }})));
 //        System.out.println(main.findMedianSortedArrays(new int[]{1, 3}, new int[]{2}));
 //        System.out.println(main.lengthOfLIS(new int[]{10, 9, 2, 5, 3, 7, 101, 18}));
-//        System.out.println(main.wordBreak("applepenapple", new ArrayList<>(Arrays.asList("apple", "pen"))));
 //        System.out.println(main.findClosestElements(new int[]{1}, 1, 1).toString());
 //
 //        System.out.println(main.validateStackSequences(new int[]{1, 2, 3, 4, 5}, new int[]{4, 5, 3, 2, 1}));
 //        System.out.println(Arrays.toString(main.finalPrices(new int[]{10, 1, 1, 6})));
 //
-//        System.out.println(main.uniqueLetterString("ABA"));
-//        System.out.println(main.reorderSpaces("  aa"));
 //        System.out.println(main.minOperations(new String[]{"d1/", "d2/", "../", "d21/", "./"}));
 //        System.out.println(main.maximumSwap(98368));
 //        System.out.println(main.maximumSwap(1993));
 //        main.rectangleArea(new int[][]{{0, 0, 2, 2}, {1, 0, 2, 3}, {1, 0, 3, 1}});
 //        System.out.println(Arrays.toString(main.frequencySort(new int[]{2, 3, 1, 3, 2})));
 //        System.out.println(main.canPartitionKSubsets(new int[]{1, 2, 3, 4}, 3));
-//        System.out.println(main.kSimilarity("abc", "bca"));
 //        System.out.println(main.canFormArray(new int[]{91, 2, 4, 64, 5, 78, 12, 9}, new int[][]{{78, 12, 3}, {4, 64, 5}, {91, 2}}));
 //        System.out.println(main.getKthMagicNumber(5));
 //        main.setZeroes(new int[][]{{1, 1, 1}, {1, 0, 1}, {1, 1, 1}});
-//        System.out.println(main.distinctSubseqII("aba"));
 //        System.out.println(main.atMostNGivenDigitSet(new String[]{"7"}, 8));
 //        int[][] grid = new int[][]{{1, 1, 1, 1, 1}, {1, 0, 0, 0, 1}, {1, 0, 1, 0, 1}, {1, 0, 0, 0, 1}, {1, 1, 1, 1, 1}};
 //        System.out.println(main.shortestBridge(grid));
 //        System.out.println(main.shortestSubarray(new int[]{1, 4, 1, -2, 1, 1, 3, -1, 2}, 3));
 //        System.out.println(main.sumSubarrayMins(new int[]{3, 2, 1, 3, 4, 2}));
 //        System.out.println(main.magicalString(6));
-//        System.out.println(main.maxRepeating("ababc", "ab"));
 //        System.out.println(main.reachNumber(2));
-//        System.out.println(main.ambiguousCoordinates("(00011)"));
-//        System.out.println(main.countConsistentStrings("ab", new String[]{"a", "ab", "abc"}));
 //        System.out.println(main.splitArraySameAverage(new int[]{1, 2, 3, 4, 5, 6, 7, 8}));
 //        System.out.println(main.reversePairs(new int[]{2147483647, 2147483647, 2147483647, 2147483647, 2147483647, 2147483647}));
-//        System.out.println(main.numMatchingSubseq("abcde", new String[]{"a", "bb", "acd", "ace"}));
 //        System.out.println(main.numSubarrayBoundedMax(new int[]{2, 3, 1, 4, 9, 10, 4, 6}, 2, 8));
-//        System.out.println(main.expressiveWords("heeellooo", new String[]{"hello"}));
-//        System.out.println(main.minOperations("0100"));
 //        System.out.println(main.closestCost(new int[]{1, 7}, new int[]{3, 4}, 10));
-//        System.out.println(main.numDifferentIntegers("123"));
 //        System.out.println(main.minOperations(new int[]{5, 6, 4, 3, 1, 2}, new int[]{6, 3, 3, 1, 4, 5, 3, 4, 1, 3, 4}));
-//        System.out.println(main.beautySum("aabcbaa"));
-//        System.out.println(main.isMatch("acdcb", "a*c?b"));
-//        System.out.println(main.longestCommonSubsequence("abbbc", "abc"));
-//        System.out.println(main.minDistance("leetcode", "etco"));//4
-//        System.out.println(main.numDistinct("babgbag", "bag"));
 //        System.out.println(main.maxArea(new int[]{1, 8, 6, 2, 5, 4, 8, 3, 7}));
 //        main.nextPermutation(new int[]{1, 5, 1});
 //        System.out.println(main.trap(new int[]{4, 2, 0, 3, 2, 5}));
 //        main.sortColors(new int[]{2, 0, 2, 1, 1, 0});
-//        System.out.println(main.minWindow("ADOBECODEBANC", "ABC"));
-        System.out.println(main.largestRectangleArea(new int[]{6, 1, 5, 2, 4, 5, 9, 3}));
+//        System.out.println(main.largestRectangleArea(new int[]{6, 1, 5, 2, 4, 5, 9, 3}));
 //        System.out.println(Arrays.toString(main.dailyTemperatures(new int[]{73, 74, 75, 71, 69, 72, 76, 73})));
 //        System.out.println(main.findUnsortedSubarray(new int[]{2, 6, 4, 8, 10, 9, 15}));
 //        System.out.println(main.maximalRectangle4(new char[][]{{'1', '0', '1', '0', '0'}, {'1', '0', '1', '1', '1'}, {'1', '1', '1', '1', '1'}, {'1', '0', '0', '1', '0'}}));
 //        System.out.println(main.canFinish(3, new int[][]{{1, 0}, {2, 1}, {0, 2}}));
 //        System.out.println(main.findKthLargest(new int[]{3, 2, 1, 5, 6, 4}, 2));
 //        System.out.println(Arrays.toString(main.maxSlidingWindow(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3)));
-//        System.out.println(Arrays.toString(main.removeInvalidParentheses("()())()").toArray()));
 //        System.out.println(main.maxProfit(new int[]{3, 3, 5, 0, 0, 3, 1, 4}));
 //        System.out.println(main.maxProfit(2, new int[]{3, 2, 6, 5, 0, 3}));
 //        System.out.println(main.maxCoins(new int[]{3, 1, 5, 8}));
 //        System.out.println(main.reconstructQueue(new int[][]{{7, 0}, {4, 4}, {7, 1}, {5, 0}, {6, 1}, {5, 2}}));
-//        System.out.println(main.findAnagrams("bbbcb", "cb").toString());
 //        System.out.println(main.findDisappearedNumbers(new int[]{4, 3, 2, 7, 8, 2, 3, 1}).toString());
 //        System.out.println(main.subarraySum(new int[]{1, 2, 3, -1, -2}, 3));
 //        main.leastInterval(new char[]{'A', 'A', 'A', 'B', 'B', 'B', 'C', 'C', 'C', 'D', 'D', 'D'}, 2);
 //        ArrayList<List<Integer>> objects = new ArrayList<>();
 //        recursion(new int[]{1, 2, 3, 4}, 0, objects);
 //        System.out.println(objects.toString());
-    }
-
-    public int countSubstrings(String s) {
-        int length = s.length(), ans = 0;
-        for (int i = 0; i < 2 * length - 1; i++) {
-            int l = i / 2, r = i / 2 + i % 2;
-            while (l >= 0 && r < length && s.charAt(l) == s.charAt(r)) {
-                l--;
-                r++;
-                ans++;
-            }
-        }
-        return ans;
     }
 
     //tasks = ["A","A","A","B","B","B"], n = 2
@@ -173,39 +137,6 @@ public class Main {
             }
         }
         return ret;
-    }
-
-    public List<Integer> findAnagrams(String s, String p) {
-        int sL = s.length(), pL = p.length();
-        List<Integer> ans = new ArrayList<>();
-        if (sL < pL) return ans;
-        int[] count = new int[26];
-        for (int i = 0; i < pL; i++) {
-            count[s.charAt(i) - 'a']++;
-            count[p.charAt(i) - 'a']--;
-        }
-        int differ = 0;
-        for (int i = 0; i < 26; i++) {
-            if (count[i] != 0) differ++;
-        }
-        if (differ == 0) ans.add(0);
-        for (int i = 0; i < sL - pL; i++) {
-            if (count[s.charAt(i) - 'a'] == 1) {
-                --differ;
-            } else if (count[s.charAt(i) - 'a'] == 0) {
-                ++differ;
-            }
-            count[s.charAt(i) - 'a']--;
-
-            if (count[s.charAt(i + pL) - 'a'] == -1) {
-                --differ;
-            } else if (count[s.charAt(i + pL) - 'a'] == 0) {
-                ++differ;
-            }
-            count[s.charAt(i + pL) - 'a']++;
-            if (differ == 0) ans.add(i + 1);
-        }
-        return ans;
     }
 
     public int[][] reconstructQueue(int[][] people) {
@@ -295,70 +226,6 @@ public class Main {
             f2 = newF2;
         }
         return Math.max(f1, f2);
-    }
-
-    public List<String> removeInvalidParentheses(String s) {
-        List<String> ans = new ArrayList<>();
-        int lremove = 0, rremove = 0;
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) == '(') lremove++;
-            else if (s.charAt(i) == ')') {
-                if (lremove == 0) rremove++;
-                else lremove--;
-            }
-        }
-        helper(s, 0, lremove, rremove, ans);
-        return ans;
-    }
-
-    private void helper(String s, int start, int lremove, int rremove, List<String> ans) {
-        if (lremove == 0 && rremove == 0) {
-            if (isValid(s)) ans.add(s);
-            return;
-        }
-        for (int i = start; i < s.length(); i++) {
-            if (i != start && s.charAt(i) == s.charAt(i - 1)) continue;
-            if (lremove + rremove > s.length() - i) return;
-            if (lremove > 0 && s.charAt(i) == '(')
-                helper(s.substring(0, i) + s.substring(i + 1), i, lremove - 1, rremove, ans);
-            if (rremove > 0 && s.charAt(i) == ')')
-                helper(s.substring(0, i) + s.substring(i + 1), i, lremove, rremove - 1, ans);
-        }
-    }
-
-    public List<String> removeInvalidParentheses1(String s) {
-        List<String> ans = new ArrayList<>();
-        Set<String> currSet = new HashSet<>();
-
-        currSet.add(s);
-        while (true) {
-            for (String str : currSet) {
-                if (isValid(str)) ans.add(str);
-            }
-            if (ans.size() > 0) return ans;
-            Set<String> nextSet = new HashSet<>();
-            for (String str : currSet) {
-                for (int i = 0; i < str.length(); i++) {
-                    if (i > 0 && str.charAt(i) == str.charAt(i - 1)) continue;
-                    if (str.charAt(i) == '(' || str.charAt(i) == ')')
-                        nextSet.add(str.substring(0, i) + str.substring(i + 1));
-                }
-            }
-            currSet = nextSet;
-        }
-    }
-
-    private boolean isValid(String str) {
-        char[] array = str.toCharArray();
-        int count = 0;
-        for (char c : array) {
-            if (c == '(') count++;
-            else if (c == ')') {
-                count--;
-                if (count < 0) return false;
-            }
-        }
-        return count == 0;
     }
 
     public boolean searchMatrix(int[][] matrix, int target) {
@@ -629,32 +496,6 @@ public class Main {
         return ans;
     }
 
-    public String minWindow(String s, String t) {
-        int left = 0, right = 0;
-        int[] tCnt = new int[128], winCnt = new int[128];
-        char[] sChars = s.toCharArray(), tChars = t.toCharArray();
-        for (char tChar : tChars) tCnt[tChar]++;
-        int distance = 0, ansL = 0, minLen = Integer.MAX_VALUE;
-
-        while (right < sChars.length) {
-            char curChar = sChars[right];
-            if (winCnt[curChar]++ < tCnt[curChar]) distance++;
-            right++;
-            while (distance == tChars.length) {
-                char leftChar = sChars[left];
-                if (right - left < minLen) {
-                    minLen = right - left;
-                    ansL = left;
-                }
-                if (winCnt[leftChar]-- == tCnt[leftChar]) distance--;
-                left++;
-            }
-        }
-        if (minLen == Integer.MAX_VALUE) return "";
-        return s.substring(ansL, ansL + minLen);
-    }
-
-
     public void sortColors(int[] nums) {
         int length = nums.length, p0 = 0, p1 = 0;
         for (int i = 0; i < length; i++) {
@@ -752,21 +593,6 @@ public class Main {
         nums[i] = num;
     }
 
-    public String convert(String s, int numRows) {
-        if (numRows < 2) return s;
-        List<StringBuilder> rows = new ArrayList<StringBuilder>();
-        for (int i = 0; i < numRows; i++) rows.add(new StringBuilder());
-        int i = 0, flag = -1;
-        for (char c : s.toCharArray()) {
-            rows.get(i).append(c);
-            if (i == 0 || i == numRows - 1) flag = -flag;
-            i += flag;
-        }
-        StringBuilder res = new StringBuilder();
-        for (StringBuilder row : rows) res.append(row);
-        return res.toString();
-    }
-
     public int maxArea(int[] height) {
         int i = 0, j = height.length - 1, res = 0;
         while (i < j) {
@@ -776,129 +602,6 @@ public class Main {
         }
         return res;
     }
-
-    public int numDistinct(String s, String t) {
-        int sL = s.length(), tL = t.length();
-        //s 的前 i 个字符与 p 中的前 j 个字符是否能够匹配
-        int dp[][] = new int[sL + 1][tL + 1];
-        for (int i = 0; i < sL; i++) dp[i][0] = 1;
-        for (int i = 1; i <= sL; i++) {
-            for (int j = 1; j <= tL; j++) {
-                if (s.charAt(i - 1) == t.charAt(j - 1)) {
-                    dp[i][j] = dp[i - 1][j - 1] + dp[i - 1][j];
-                } else {
-                    dp[i][j] = dp[i - 1][j];
-                }
-            }
-        }
-        return dp[sL][tL];
-    }
-
-    public int numDistinct1(String s, String t) {
-        int[][] dp = new int[t.length() + 1][s.length() + 1];
-        for (int j = 0; j < s.length() + 1; j++) dp[0][j] = 1;
-        for (int i = 1; i < t.length() + 1; i++) {
-            for (int j = 1; j < s.length() + 1; j++) {
-                if (t.charAt(i - 1) == s.charAt(j - 1)) dp[i][j] = dp[i - 1][j - 1] + dp[i][j - 1];
-                else dp[i][j] = dp[i][j - 1];
-            }
-        }
-        return dp[t.length()][s.length()];
-    }
-
-    /**
-     * word1 = "horse", word2 = "ros" 3
-     * word1 = "intention", word2 = "execution" 5
-     */
-    public int minDistance(String word1, String word2) {
-        int w1 = word1.length(), w2 = word2.length();
-        int dp[][] = new int[w1 + 1][w2 + 1];
-        for (int i = 0; i <= w1; i++) dp[i][0] = i;
-        for (int j = 0; j <= w2; j++) dp[0][j] = j;
-
-        for (int i = 1; i <= w1; i++) {
-            for (int j = 1; j <= w2; j++) {
-                if (word1.charAt(i - 1) == word2.charAt(j - 1)) {
-                    dp[i][j] = dp[i - 1][j - 1];
-                } else {
-                    dp[i][j] = Math.min(dp[i - 1][j], dp[i][j - 1]) + 1;
-                }
-            }
-        }
-        return dp[w1][w2];
-    }
-
-    /**
-     * dp[i][j] = dp[i-1][j-1]+1 ;t1[i]=t2[j]
-     */
-    public int longestCommonSubsequence(String text1, String text2) {
-        int l1 = text1.length(), l2 = text2.length();
-        //s 的前 i 个字符与 p 中的前 j 个字符 的最长
-        int dp[][] = new int[l1 + 1][l2 + 1];
-        dp[0][0] = 0;
-        for (int i = 1; i <= l1; i++) {
-            for (int j = 1; j <= l2; j++) {
-                if (text1.charAt(i - 1) == text2.charAt(j - 1)) {
-                    dp[i][j] = dp[i - 1][j - 1] + 1;
-                } else {
-                    dp[i][j] = Math.max(dp[i - 1][j], dp[i][j - 1]);
-                }
-            }
-        }
-        return dp[l1][l2];
-    }
-
-    /**
-     * dp[i][j] =
-     * dp[i][j - 1]
-     * dp[i - 1][j]
-     * dp[i - 1][j - 1]
-     */
-    public boolean isMatch(String s, String p) {
-        int sL = s.length(), pL = p.length();
-        //s 的前 i 个字符与 p 中的前 j 个字符是否能够匹配
-        boolean dp[][] = new boolean[sL + 1][pL + 1];
-        dp[0][0] = true;
-
-        for (int i = 0; i <= sL; i++) {//从0开始，p为a*时
-            for (int j = 1; j <= pL; j++) {
-                if (p.charAt(j - 1) == '*') {
-                    if (i == 0) dp[i][j] = dp[i][j - 1];
-                    else dp[i][j] = dp[i - 1][j] || dp[i][j - 1];//0个p[j-1]
-                } else {
-                    if (match(s, p, i, j)) dp[i][j] = dp[i - 1][j - 1];
-                }
-            }
-        }
-        return dp[sL][pL];
-    }
-
-    private boolean match(String s, String p, int i, int j) {
-        if (i == 0) return false;
-        if (p.charAt(j - 1) == '?') return true;
-        return s.charAt(i - 1) == p.charAt(j - 1);
-    }
-
-    public int beautySum(String s) {
-        int res = 0;
-        for (int i = 0; i < s.length(); i++) {
-            int[] cnt = new int[26];
-            int maxFreq = 0;
-            for (int j = i; j < s.length(); j++) {
-                cnt[s.charAt(j) - 'a']++;
-                maxFreq = Math.max(maxFreq, cnt[s.charAt(j) - 'a']);
-                int minFreq = s.length();
-                for (int k = 0; k < 26; k++) {
-                    if (cnt[k] > 0) {
-                        minFreq = Math.min(minFreq, cnt[k]);
-                    }
-                }
-                res += maxFreq - minFreq;
-            }
-        }
-        return res;
-    }
-
 
     public int minOperations(int[] nums1, int[] nums2) {
         int n = nums1.length, m = nums2.length;
@@ -977,28 +680,6 @@ public class Main {
         return f[n];
     }
 
-    public int numDifferentIntegers(String word) {
-        Set<String> set = new HashSet<String>();
-        int n = word.length(), p1 = 0, p2;
-        while (true) {
-            while (p1 < n && !Character.isDigit(word.charAt(p1))) {
-                p1++;
-            }
-            if (p1 == n) {
-                break;
-            }
-            p2 = p1;
-            while (p2 < n && Character.isDigit(word.charAt(p2))) {
-                p2++;
-            }
-            while (p2 - p1 > 1 && word.charAt(p1) == '0') { // 去除前导 0
-                p1++;
-            }
-            set.add(word.substring(p1, p2));
-            p1 = p2;
-        }
-        return set.size();
-    }
 
     public int closestCost(int[] baseCosts, int[] toppingCosts, int target) {
         int x = Arrays.stream(baseCosts).min().getAsInt();
@@ -1059,58 +740,6 @@ public class Main {
         return bestid;
     }
 
-    public int minOperations(String s) {
-        int result = 0;
-        char[] sc = s.toCharArray();
-        char preChar = sc[0];
-        for (int i = 1; i < sc.length; i++) {
-            if (preChar == sc[i]) {
-                preChar = preChar == '0' ? '1' : '0';
-                result++;
-            } else {
-                preChar = sc[i];
-            }
-        }
-        return Math.min(result, s.length() - result);
-    }
-
-    public int expressiveWords(String s, String[] words) {
-        int ans = 0;
-        for (String word : words) {
-            if (expand(s, word)) {
-                ++ans;
-            }
-        }
-        return ans;
-    }
-
-    private boolean expand(String s, String t) {
-        int i = 0, j = 0;
-        while (i < s.length() && j < t.length()) {
-            if (s.charAt(i) != t.charAt(j)) {
-                return false;
-            }
-            char ch = s.charAt(i);
-            int cnti = 0;
-            while (i < s.length() && s.charAt(i) == ch) {
-                ++cnti;
-                ++i;
-            }
-            int cntj = 0;
-            while (j < t.length() && t.charAt(j) == ch) {
-                ++cntj;
-                ++j;
-            }
-            if (cnti < cntj) {
-                return false;
-            }
-            if (cnti != cntj && cnti < 3) {
-                return false;
-            }
-        }
-        return i == s.length() && j == t.length();
-    }
-
     public int numSubarrayBoundedMax(int[] nums, int left, int right) {
         // last2表示nums中上一个大于right的索引，last1表示nums中上一个在l和r直接的索引
         int res = 0, last2 = -1, last1 = -1;
@@ -1157,34 +786,6 @@ public class Main {
         return (int) ((res + MOD) % MOD);
     }
 
-
-    public int numMatchingSubseq(String s, String[] words) {
-        //int[]的length为2，int[0]为words[i],int[1]为words[i].charAt(int[1])
-        //类似于广度遍历
-        Queue<int[]>[] p = new Queue[26];
-        for (int i = 0; i < 26; ++i) {
-            p[i] = new ArrayDeque<int[]>();
-        }
-        for (int i = 0; i < words.length; ++i) {
-            p[words[i].charAt(0) - 'a'].offer(new int[]{i, 0});
-        }
-        int res = 0;
-        for (int i = 0; i < s.length(); ++i) {
-            char c = s.charAt(i);
-            int len = p[c - 'a'].size();
-            while (len > 0) {
-                int[] t = p[c - 'a'].poll();
-                if (t[1] == words[t[0]].length() - 1) {
-                    ++res;
-                } else {
-                    ++t[1];
-                    p[words[t[0]].charAt(t[1]) - 'a'].offer(t);
-                }
-                --len;
-            }
-        }
-        return res;
-    }
 
     public boolean isIdealPermutation(int[] nums) {
         int n = nums.length, minSuff = nums[n - 1];
@@ -1312,66 +913,6 @@ public class Main {
         return ans;
     }
 
-
-    public int countConsistentStrings(String allowed, String[] words) {
-        int mask = 0;
-        for (int i = 0; i < allowed.length(); i++) {
-            char c = allowed.charAt(i);
-            mask |= 1 << (c - 'a');
-        }
-        int res = 0;
-        for (String word : words) {
-            int mask1 = 0;
-            for (int i = 0; i < word.length(); i++) {
-                char c = word.charAt(i);
-                mask1 |= 1 << (c - 'a');
-            }
-            if ((mask1 | mask) == mask) {
-                res++;
-            }
-        }
-        return res;
-    }
-
-    public List<String> ambiguousCoordinates(String s) {
-        int n = s.length() - 2;
-        List<String> res = new ArrayList<String>();
-        s = s.substring(1, s.length() - 1);
-        for (int l = 1; l < n; ++l) {
-            List<String> lt = getPos(s.substring(0, l));
-            if (lt.isEmpty()) {
-                continue;
-            }
-            List<String> rt = getPos(s.substring(l));
-            if (rt.isEmpty()) {
-                continue;
-            }
-            for (String i : lt) {
-                for (String j : rt) {
-                    res.add("(" + i + ", " + j + ")");
-                }
-            }
-        }
-        return res;
-    }
-
-    public List<String> getPos(String s) {
-        List<String> pos = new ArrayList<String>();
-        //非0开头或者单独数字0直接加入结果集合中
-        if (s.charAt(0) != '0' || "0".equals(s)) {
-            pos.add(s);
-        }
-        //拆分s，往中间插入小数点构造小数
-        for (int p = 1; p < s.length(); ++p) {
-            //排除00.11 || 0.10
-            if ((p != 1 && s.charAt(0) == '0') || s.charAt(s.length() - 1) == '0') {
-                continue;
-            }
-            pos.add(s.substring(0, p) + "." + s.substring(p));
-        }
-        return pos;
-    }
-
     public int reachNumber(int target) {
         int result = 0, num = 0, t = Math.abs(target); // 由于target有负数情况，为了统一计算逻辑，所以取绝对值
         // 直到num值大于等于t，并且num减t是偶数()，才结束while循环
@@ -1380,41 +921,6 @@ public class Main {
         return result;
     }
 
-    public int maxRepeating(String sequence, String word) {
-        int n = sequence.length(), m = word.length();
-        if (n < m) {
-            return 0;
-        }
-
-        int[] fail = new int[m];
-        Arrays.fill(fail, -1);
-        for (int i = 1; i < m; ++i) {
-            int j = fail[i - 1];
-            while (j != -1 && word.charAt(j + 1) != word.charAt(i)) {
-                j = fail[j];
-            }
-            if (word.charAt(j + 1) == word.charAt(i)) {
-                fail[i] = j + 1;
-            }
-        }
-
-        int[] f = new int[n];
-        int j = -1;
-        for (int i = 0; i < n; ++i) {
-            while (j != -1 && word.charAt(j + 1) != sequence.charAt(i)) {
-                j = fail[j];
-            }
-            if (word.charAt(j + 1) == sequence.charAt(i)) {
-                ++j;
-                if (j == m - 1) {
-                    f[i] = (i >= m ? f[i - m] : 0) + 1;
-                    j = fail[j];
-                }
-            }
-        }
-
-        return Arrays.stream(f).max().getAsInt();
-    }
 
     public int[] bestCoordinate(int[][] towers, int radius) {
         int xMax = Integer.MIN_VALUE, yMax = Integer.MIN_VALUE;
@@ -1468,14 +974,6 @@ public class Main {
         return result;
     }
 
-
-    public int countMatches(List<List<String>> items, String ruleKey, String ruleValue) {
-        int sum = 0, index = "type".equals(ruleKey) ? 0 : "color".equals(ruleKey) ? 1 : 2;
-        for (List<String> item : items) {
-            if (ruleValue.equals(item.get(index))) sum++;
-        }
-        return sum;
-    }
 
     /**
      * 输入：arr = [3,2,1,3,4,2]
@@ -1613,6 +1111,16 @@ public class Main {
         return 0;
     }
 
+    /**
+     * 902. 最大为 N 的数字组合
+     * 给定一个按 非递减顺序 排列的数字数组 digits 。你可以用任意次数 digits[i] 来写的数字。例如，如果 digits = ['1','3','5']，我们可以写数字，如 '13', '551', 和 '1351315'。
+     * <p>
+     * 返回 可以生成的小于或等于给定整数 n 的正整数的个数 。
+     *
+     * @param digits
+     * @param n
+     * @return
+     */
     public int atMostNGivenDigitSet(String[] digits, int n) {
         String s = Integer.toString(n);
         int m = digits.length, k = s.length();
@@ -1653,20 +1161,6 @@ public class Main {
         return ans;
     }
 
-
-    public int distinctSubseqII(String s) {
-        int mod = 1000000007;
-        int total = 0;
-        int[] f = new int[26];
-        for (int i = 0; i < s.length(); i++) {
-            int c = s.charAt(i) - 'a';
-            int others = total - f[c]; // 不含 f[c] 的部分（由于取模的原因，这里的减法可能会产生负数）
-            f[c] = total + 1; // 更新 f[c]
-            total = ((f[c] + others) % mod + mod) % mod; // 更新 total，并保证 total 非负
-        }
-        return total;
-    }
-
     public int maxChunksToSorted(int[] arr) {
         int ans = 0, max = 0;
         for (int i = 0; i < arr.length; i++) {
@@ -1701,9 +1195,6 @@ public class Main {
         }
     }
 
-    public boolean isFlipedString(String s1, String s2) {
-        return s1.length() == s2.length() && (s1 + s1).contains(s2);
-    }
 
     public int getKthMagicNumber(int k) {
         int[] ans = new int[k + 1];
@@ -1719,21 +1210,6 @@ public class Main {
         return ans[k];
     }
 
-    public boolean CheckPermutation(String s1, String s2) {
-        if (s1.length() != s2.length()) return false;
-
-        int[] table = new int[26];
-        for (int i = 0; i < s1.length(); i++) {
-            table[s1.charAt(i) - 'a']++;
-        }
-        for (int i = 0; i < s2.length(); i++) {
-            table[s2.charAt(i) - 'a']--;
-            if (table[s2.charAt(i) - 'a'] < 0) {
-                return false;
-            }
-        }
-        return true;
-    }
 
     public int[] missingTwo(int[] nums) {
         //cur为理论上 1 到 N 的和
@@ -1749,23 +1225,6 @@ public class Main {
         return new int[]{cur, sum - cur};
     }
 
-    public int longestValidParentheses(String s) {
-        int maxans = 0;
-        int[] dp = new int[s.length()];
-        for (int i = 1; i < s.length(); i++) {
-            if (s.charAt(i) == ')') {
-                if (s.charAt(i - 1) == '(') {
-                    //()()
-                    dp[i] = (i >= 2 ? dp[i - 2] : 0) + 2;
-                } else if (i - dp[i - 1] > 0 && s.charAt(i - dp[i - 1] - 1) == '(') {
-                    //()(())
-                    dp[i] = dp[i - 1] + ((i - dp[i - 1]) >= 2 ? dp[i - dp[i - 1] - 2] : 0) + 2;
-                }
-                maxans = Math.max(maxans, dp[i]);
-            }
-        }
-        return maxans;
-    }
 
     public boolean canFormArray(int[] arr, int[][] pieces) {
         for (int i = 0; i < arr.length; i++) {
@@ -1792,53 +1251,6 @@ public class Main {
         return true;
     }
 
-    /**
-     * "abc", "bca"
-     */
-    public int kSimilarity(String s1, String s2) {
-        int n = s1.length();
-        Queue<Pair<String, Integer>> queue = new ArrayDeque<Pair<String, Integer>>();
-        Set<String> visit = new HashSet<String>();
-        queue.offer(new Pair<String, Integer>(s1, 0));
-        visit.add(s1);
-        int step = 0;
-        while (!queue.isEmpty()) {
-            int sz = queue.size();
-            for (int i = 0; i < sz; i++) {
-                Pair<String, Integer> pair = queue.poll();
-                String cur = pair.getKey();
-                int pos = pair.getValue();
-                if (cur.equals(s2)) {
-                    return step;
-                }
-                while (pos < n && cur.charAt(pos) == s2.charAt(pos)) {
-                    pos++;
-                }
-                for (int j = pos + 1; j < n; j++) {
-                    if (s2.charAt(j) == cur.charAt(j)) {
-                        continue;
-                    }
-                    if (s2.charAt(pos) == cur.charAt(j)) {
-                        String next = swap(cur, pos, j);
-                        if (!visit.contains(next)) {
-                            visit.add(next);
-                            queue.offer(new Pair<String, Integer>(next, pos + 1));
-                        }
-                    }
-                }
-            }
-            step++;
-        }
-        return step;
-    }
-
-    public String swap(String cur, int i, int j) {
-        char[] arr = cur.toCharArray();
-        char c = arr[i];
-        arr[i] = arr[j];
-        arr[j] = c;
-        return new String(arr);
-    }
 
     /**
      * 698. 划分为k个相等的子集
@@ -2009,107 +1421,6 @@ public class Main {
         return ans;
     }
 
-    /**
-     * 139.单词拆分
-     */
-    public boolean wordBreak(String s, List<String> wordDict) {
-        Set<String> set = new HashSet<>(wordDict);
-        boolean[] dp = new boolean[s.length() + 1];
-        dp[0] = true;
-        for (int i = 1; i <= s.length(); i++) {
-            for (int j = 0; j < i; j++) {
-                if (dp[j] && set.contains(s.substring(j, i))) {
-                    dp[i] = true;
-                    break;
-                }
-            }
-        }
-        return dp[s.length()];
-    }
-
-    /**
-     * 1592. 重新排列单词间的空格
-     * text = "  this   is  a sentence "
-     * "this   is   a   sentence"
-     */
-    public String reorderSpaces(String text) {
-        int spaceCount = 0;
-        List<String> stringList = new ArrayList<>();
-        for (int i = 0; i < text.length(); ) {
-            if (text.charAt(i) == ' ') {
-                spaceCount++;
-                i++;
-                continue;
-            }
-            StringBuilder stringBuilder = new StringBuilder();
-            while (i < text.length() && text.charAt(i) != ' ') {
-                stringBuilder.append(text.charAt(i));
-                i++;
-            }
-            stringList.add(stringBuilder.toString());
-        }
-        StringBuilder ans = new StringBuilder();
-        if (stringList.size() == 1) {
-            ans.append(stringList.get(0));
-            for (int i = 0; i < spaceCount; i++) {
-                ans.append(' ');
-            }
-            return ans.toString();
-        }
-        int spaceSkip = spaceCount / (stringList.size() - 1);
-        StringBuilder spaceStringBuilder = new StringBuilder();
-        for (int i = 0; i < spaceSkip; i++) spaceStringBuilder.append(' ');
-        String spaceString = spaceStringBuilder.toString();
-
-
-        for (int i = 0; i < stringList.size(); i++) {
-            ans.append(stringList.get(i));
-            if (i != stringList.size() - 1) ans.append(spaceString);
-        }
-
-        int spaceRemain = spaceCount % (stringList.size() - 1);
-        if (spaceRemain != 0) {
-            StringBuilder spaceRemainStringBuilder = new StringBuilder();
-            for (int i = 0; i < spaceRemain; i++) spaceRemainStringBuilder.append(' ');
-            ans.append(spaceRemainStringBuilder.toString());
-        }
-        return ans.toString();
-    }
-
-    /**
-     * 828. 统计子串中的唯一字符
-     * 函数 countUniqueChars(s) 来统计字符串 s 中的唯一字符，并返回唯一字符的个数。
-     * 本题将会给你一个字符串 s ，我们需要返回 countUniqueChars(t) 的总和，其中 t 是 s 的子字符串。输入用例保证返回值为 32 位整数。
-     * <p>
-     * 注意，某些子字符串可能是重复的，但你统计时也必须算上这些重复的子字符串（也就是说，你必须统计 s 的所有子字符串中的唯一字符）。
-     * 贡献度
-     * A AB ABA B BA A     1+2+1+1+2+1      (A)1*(空 AB)2+(BA A)2*1(空)     (AB B)2*2(空 BA)
-     * A AB ABC B BC C     1+2+3+1+2+1
-     * <p>
-     * 当前字符c的位置——x_i 上一次出现c的位置——x_i-1 后一次出现c的位置——x_i+1
-     * （x_i - x_i-1) * (x_i+1 - x_i)
-     */
-    public int uniqueLetterString(String s) {
-        Map<Character, List<Integer>> charIndexMap = new HashMap<>();
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-            if (!charIndexMap.containsKey(c)) {
-                charIndexMap.put(c, new ArrayList<>());
-                charIndexMap.get(c).add(-1);
-            }
-            charIndexMap.get(c).add(i);
-        }
-        int res = 0;
-        for (Map.Entry<Character, List<Integer>> entry : charIndexMap.entrySet()) {
-            List<Integer> indexList = entry.getValue();
-            indexList.add(s.length());
-            for (int i = 1; i < indexList.size() - 1; i++) {
-                res += (indexList.get(i) - indexList.get(i - 1)) * (indexList.get(i + 1) - indexList.get(i));
-            }
-        }
-        return res;
-    }
-
     //1475. 商品折扣后的最终价格
     public int[] finalPrices(int[] prices) {
         int length = prices.length;
@@ -2238,69 +1549,6 @@ public class Main {
         }
         if (dp[amount] != Integer.MAX_VALUE) return dp[amount];
         return -1;
-    }
-
-    public int lengthOfLongestSubstring(String str) {
-        //滑动窗口
-        int n = str.length(), ret = 0;
-        char[] s = str.toCharArray(), arr = new char[128];
-        int left = 0, right = 0;
-        while (right < n) {
-            arr[s[right]]++;
-            while (arr[s[right]] > 1) {
-                arr[s[left++]]--;
-            }
-            right++;
-            ret = Math.max(ret, right - left);
-        }
-        return ret;
-    }
-
-    public String longestPalindrome(String s) {
-        if (s.length() <= 1) return s;
-        String res = "";
-        for (int i = 0; i < s.length(); i++) {
-            String s1 = palindrome(s, i, i);
-            String s2 = palindrome(s, i, i + 1);
-            res = (s1.length() > res.length()) ? s1 : res;
-            res = (s2.length() > res.length()) ? s2 : res;
-        }
-        return res;
-    }
-
-    private String palindrome(String s, int left, int right) {
-        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
-            left--;
-            right++;
-        }
-        return s.substring(left + 1, right);
-    }
-
-    public String decodeString(String s) {
-        StringBuilder res = new StringBuilder();
-        int multi = 0;
-        LinkedList<Integer> stack_multi = new LinkedList<>();
-        LinkedList<String> stack_res = new LinkedList<>();
-        for (Character c : s.toCharArray()) {
-            if (c == '[') {
-                stack_multi.addLast(multi);
-                stack_res.addLast(res.toString());
-                multi = 0;
-                res = new StringBuilder();
-            } else if (c == ']') {
-                StringBuilder tmp = new StringBuilder();
-                int cur_multi = stack_multi.removeLast();
-                for (int i = 0; i < cur_multi; i++) {
-                    tmp.append(res);
-                }
-                res = new StringBuilder(stack_res.removeLast() + tmp);
-            } else if (c >= '0' && c <= '9') {
-                multi = multi * 10 + Integer.parseInt(c + "");
-            } else {
-                res.append(c);
-            }
-        }
-        return res.toString();
     }
 
 
@@ -2469,70 +1717,6 @@ public class Main {
         }
     }
 
-    public int countSubstrings1(String s) {
-        StringBuilder news = new StringBuilder();
-        for (int i = 0; i < s.length(); i++) {
-            news.append('#').append(s.charAt(i));
-        }
-        news.append('#');
-        //回文半径数组
-        int[] circleRadiusArr = new int[news.length()];
-        // radiusIndex中心点；rMax以radiusIndex为中心回文的最大右位置的index，
-        int radiusIndex = 0, rMaxIndex = 0, ans = 0;
-        for (int i = 0; i < news.length(); i++) {
-            // i关于radiusIndex的对称位置
-            int mirror = 2 * radiusIndex - i;
-            circleRadiusArr[i] = i < rMaxIndex ? Math.min(circleRadiusArr[mirror], rMaxIndex - i) : 1;
-            //这里可以在news的首尾分别加上不等的字符来结束while；或者判断i + circleRadiusArr[i]的长度
-            while (i + circleRadiusArr[i] < news.length() && i - circleRadiusArr[i] >= 0 &&
-                    news.charAt(i + circleRadiusArr[i]) == news.charAt(i - circleRadiusArr[i])) {
-                ++circleRadiusArr[i];
-            }
-            if (i + circleRadiusArr[i] > rMaxIndex) {
-                radiusIndex = i;
-                rMaxIndex = i + circleRadiusArr[i];
-            }
-            ans += circleRadiusArr[i] / 2;
-        }
-        return ans;
-    }
-
-    public String longestPalindrome1(String s) {
-        StringBuilder news = new StringBuilder();
-        for (int i = 0; i < s.length(); i++) {
-            news.append('#').append(s.charAt(i));
-        }
-        news.append('#');
-        //某个位置的回文半径
-        int[] circleRadiusArr = new int[news.length()];
-        // radiusIndex中心点；rMax以radiusIndex为中心回文的最大右位置的index，
-        int radiusIndex = 0, rMaxIndex = 0;
-        for (int i = 0; i < news.length(); i++) {
-            // i关于radiusIndex的对称位置
-            int mirror = 2 * radiusIndex - i;
-            circleRadiusArr[i] = i < rMaxIndex ? Math.min(circleRadiusArr[mirror], rMaxIndex - i) : 1;
-            //这里可以在news的首尾分别加上不等的字符来结束while；或者判断i + circleRadiusArr[i]的长度
-            while (i + circleRadiusArr[i] < news.length() && i - circleRadiusArr[i] >= 0 &&
-                    news.charAt(i + circleRadiusArr[i]) == news.charAt(i - circleRadiusArr[i])) {
-                ++circleRadiusArr[i];
-            }
-            if (i + circleRadiusArr[i] > rMaxIndex) {
-                radiusIndex = i;
-                rMaxIndex = i + circleRadiusArr[i];
-            }
-        }
-
-        int maxCenter = 0, maxLen = 0;
-        for (int i = 0; i < circleRadiusArr.length; i++) {
-            if (circleRadiusArr[i] > maxLen) {
-                maxLen = circleRadiusArr[i];
-                maxCenter = i;
-            }
-        }
-        //实际的len为maxLen - 1，1为中心字符本身
-        int startIndex = (maxCenter - maxLen + 1) / 2;
-        return s.substring(startIndex, startIndex + maxLen - 1);
-    }
 
     public static void recursion(int[] nums, int i, List<List<Integer>> res) {
         if (i >= nums.length) return;
@@ -2568,7 +1752,6 @@ public class Main {
         board[i][j] -= 27;
         return ans;
     }
-
 
 
 }
