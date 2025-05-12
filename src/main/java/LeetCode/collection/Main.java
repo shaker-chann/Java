@@ -98,19 +98,48 @@ public class Main {
 //        System.out.println(objects.toString());
     }
 
+    /**
+     * 621. 任务调度器
+     * AXX AXX A
+     * ABX ABX AB
+     * ABC ABC AB
+     * ABCD ABC AB
+     * 提示
+     * 给你一个用字符数组 tasks 表示的 CPU 需要执行的任务列表，
+     * 用字母 A 到 Z 表示，以及一个冷却时间 n。每个周期或时间间隔允许完成一项任务。
+     * 任务可以按任何顺序完成，但有一个限制：两个 相同种类 的任务之间必须有长度为 n 的冷却时间。
+     * <p>
+     * 返回完成所有任务所需要的 最短时间间隔 。
+     *
+     * @param tasks
+     * @param n
+     * @return
+     */
     //tasks = ["A","A","A","B","B","B"], n = 2
     public int leastInterval(char[] tasks, int n) {
         int[] cnts = new int[26];
         for (char c : tasks) cnts[c - 'A']++;
+        //max出现最多的次数，tot出现次数和max一样的字母的个数
         int max = 0, tot = 0;
         for (int i = 0; i < 26; i++) max = Math.max(max, cnts[i]);
         for (int i = 0; i < 26; i++) tot += max == cnts[i] ? 1 : 0;
         return Math.max(tasks.length, (n + 1) * (max - 1) + tot);
     }
 
-
+    /**
+     * 560. 和为 K 的子数组
+     * <p>
+     * 给你一个整数数组 nums 和一个整数 k ，请你统计并返回 该数组中和为 k 的子数组的个数 。
+     * <p>
+     * 子数组是数组中元素的连续非空序列
+     *
+     * @param nums
+     * @param k
+     * @return
+     */
     public int subarraySum(int[] nums, int k) {
         int count = 0, pre = 0;
+        // 前缀和（key）的次数（value）
         HashMap<Integer, Integer> mp = new HashMap<>();
         mp.put(0, 1);
         for (int i = 0; i < nums.length; i++) {
@@ -123,8 +152,17 @@ public class Main {
         return count;
     }
 
+    /**
+     * 448. 找到所有数组中消失的数字
+     * <p>
+     * 给你一个含 n 个整数的数组 nums ，其中 nums[i] 在区间 [1, n] 内。请你找出所有在 [1, n] 范围内但没有出现在 nums 中的数字，并以数组的形式返回结果。
+     *
+     * @param nums
+     * @return
+     */
     public List<Integer> findDisappearedNumbers(int[] nums) {
         int n = nums.length;
+        //将nums[i]为index位置，将nums[index]位置的数据加n，最后nums中小于n的数字
         for (int num : nums) {
             //对n取余数，得到num原来的值
             int x = (num - 1) % n;
@@ -139,15 +177,20 @@ public class Main {
         return ret;
     }
 
+    /**
+     * 406. 根据身高重建队列
+     * <p>
+     * 假设有打乱顺序的一群人站成一个队列，数组 people 表示队列中一些人的属性（不一定按顺序）。
+     * 每个 people[i] = [hi, ki] 表示第 i 个人的身高为 hi ，前面 正好 有 ki 个身高大于或等于 hi 的人。
+     * <p>
+     * 请你重新构造并返回输入数组 people 所表示的队列。返回的队列应该格式化为数组 queue ，
+     * 其中 queue[j] = [hj, kj] 是队列中第 j 个人的属性（queue[0] 是排在队列前面的人）
+     *
+     * @param people
+     * @return
+     */
     public int[][] reconstructQueue(int[][] people) {
-        Arrays.sort(people, (a, b) -> {
-            if (a[0] < b[0])
-                return 1;
-            else if (a[0] > b[0])
-                return -1;
-            else
-                return a[1] - b[1];
-        });
+        Arrays.sort(people, (a, b) -> a[0] == b[0] ? a[1] - b[1] : b[0] - a[0]);
         List<int[]> list = new ArrayList<>();
         for (int i = 0; i < people.length; i++) {
             int[] cur = people[i];
@@ -159,6 +202,19 @@ public class Main {
         return list.toArray(new int[people.length][]);
     }
 
+    /**
+     * 312. 戳气球
+     * <p>
+     * 有 n 个气球，编号为0 到 n - 1，每个气球上都标有一个数字，这些数字存在数组 nums 中。
+     * <p>
+     * 现在要求你戳破所有的气球。戳破第 i 个气球，你可以获得 nums[i - 1] * nums[i] * nums[i + 1] 枚硬币。
+     * 这里的 i - 1 和 i + 1 代表和 i 相邻的两个气球的序号。如果 i - 1或 i + 1 超出了数组的边界，那么就当它是一个数字为 1 的气球。
+     * <p>
+     * 求所能获得硬币的最大数量。
+     *
+     * @param nums
+     * @return
+     */
     // 左右两边补1
     public int maxCoins(int[] nums) {
         int length = nums.length;
@@ -180,6 +236,19 @@ public class Main {
         return res[0][length + 1];
     }
 
+    /**
+     * 188. 买卖股票的最佳时机 IV
+     * <p>
+     * 给你一个整数数组 prices 和一个整数 k ，其中 prices[i] 是某支给定的股票在第 i 天的价格。
+     * <p>
+     * 设计一个算法来计算你所能获取的最大利润。你最多可以完成 k 笔交易。也就是说，你最多可以买 k 次，卖 k 次。
+     * <p>
+     * 注意：你不能同时参与多笔交易（你必须在再次购买前出售掉之前的股票）。
+     *
+     * @param k
+     * @param prices
+     * @return
+     */
     public int maxProfit(int k, int[] prices) {
         if (prices.length < 2) return 0;
 
@@ -200,6 +269,18 @@ public class Main {
         return sell[k];
     }
 
+    /**
+     * 121. 买卖股票的最佳时机
+     * <p>
+     * 给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。
+     * <p>
+     * 你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。
+     * <p>
+     * 返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。
+     *
+     * @param prices
+     * @return
+     */
     //最大收益，最大的两个价差
     public int maxProfit(int[] prices) {
 //        int n = prices.length;
@@ -228,6 +309,18 @@ public class Main {
         return Math.max(f1, f2);
     }
 
+    /**
+     * 240. 搜索二维矩阵 II
+     * <p>
+     * 编写一个高效的算法来搜索 m x n 矩阵 matrix 中的一个目标值 target 。该矩阵具有以下特性：
+     * <p>
+     * 每行的元素从左到右升序排列。
+     * 每列的元素从上到下升序排列。
+     *
+     * @param matrix
+     * @param target
+     * @return
+     */
     public boolean searchMatrix(int[][] matrix, int target) {
         int m = matrix.length, n = matrix[0].length;
         int x = 0, y = n - 1;
@@ -239,6 +332,17 @@ public class Main {
         return false;
     }
 
+    /**
+     * 239. 滑动窗口最大值
+     * <p>
+     * 给你一个整数数组 nums，有一个大小为 k 的滑动窗口从数组的最左侧移动到数组的最右侧。你只可以看到在滑动窗口内的 k 个数字。滑动窗口每次只向右移动一位。
+     * <p>
+     * 返回 滑动窗口中的最大值 。
+     *
+     * @param nums
+     * @param k
+     * @return
+     */
     public int[] maxSlidingWindow(int[] nums, int k) {
         int n = nums.length;
         Deque<Integer> deque = new LinkedList<Integer>();
@@ -264,6 +368,18 @@ public class Main {
         return ans;
     }
 
+    /**
+     * 238. 除自身以外数组的乘积
+     * <p>
+     * 给你一个整数数组 nums，返回 数组 answer ，其中 answer[i] 等于 nums 中除 nums[i] 之外其余各元素的乘积 。
+     * <p>
+     * 题目数据 保证 数组 nums之中任意元素的全部前缀元素和后缀的乘积都在  32 位 整数范围内。
+     * <p>
+     * 请 不要使用除法，且在 O(n) 时间复杂度内完成此题。
+     *
+     * @param nums
+     * @return
+     */
     public int[] productExceptSelf(int[] nums) {
         int length = nums.length;
         int[] answer = new int[length];
@@ -282,6 +398,19 @@ public class Main {
         return answer;
     }
 
+    /**
+     * 215. 数组中的第K个最大元素
+     * <p>
+     * 给定整数数组 nums 和整数 k，请返回数组中第 k 个最大的元素。
+     * <p>
+     * 请注意，你需要找的是数组排序后的第 k 个最大的元素，而不是第 k 个不同的元素。
+     * <p>
+     * 你必须设计并实现时间复杂度为 O(n) 的算法解决此问题。
+     *
+     * @param nums
+     * @param k
+     * @return
+     */
     public int findKthLargest(int[] nums, int k) {
         return quickSelect(nums, 0, nums.length - 1, nums.length - k);
     }
@@ -312,6 +441,15 @@ public class Main {
     boolean valid = true;
 
     /**
+     * 207. 课程表
+     * <p>
+     * 你这个学期必须选修 numCourses 门课程，记为 0 到 numCourses - 1 。
+     * <p>
+     * 在选修某些课程之前需要一些先修课程。 先修课程按数组 prerequisites 给出，其中 prerequisites[i] = [ai, bi] ，表示如果要学习课程 ai 则 必须 先学习课程  bi 。
+     * <p>
+     * 例如，先修课程对 [0, 1] 表示：想要学习课程 0 ，你需要先完成课程 1 。
+     * 请你判断是否可能完成所有课程的学习？如果可以，返回 true ；否则，返回 false 。
+     *
      * @param numCourses    数量
      * @param prerequisites 先prerequisites[0]再prerequisites[1]的顺序
      */
@@ -362,6 +500,16 @@ public class Main {
         visited[pre] = 2;
     }
 
+    /**
+     * 169. 多数元素
+     * <p>
+     * 给定一个大小为 n 的数组 nums ，返回其中的多数元素。多数元素是指在数组中出现次数 大于 ⌊ n/2 ⌋ 的元素。
+     * <p>
+     * 你可以假设数组是非空的，并且给定的数组总是存在多数元素。
+     *
+     * @param nums
+     * @return
+     */
     public int majorityElement(int[] nums) {
         int count = 0;
         Integer candidate = null;
@@ -374,6 +522,16 @@ public class Main {
         return candidate;
     }
 
+    /**
+     * 128. 最长连续序列
+     * <p>
+     * 给定一个未排序的整数数组 nums ，找出数字连续的最长序列（不要求序列元素在原数组中连续）的长度。
+     * <p>
+     * 请你设计并实现时间复杂度为 O(n) 的算法解决此问题。
+     *
+     * @param nums
+     * @return
+     */
     public int longestConsecutive(int[] nums) {
         Set<Integer> set = new HashSet<>();
         for (int num : nums) set.add(num);
@@ -390,6 +548,14 @@ public class Main {
         return ans;
     }
 
+    /**
+     * 85. 最大矩形
+     * <p>
+     * 给定一个仅包含 0 和 1 、大小为 rows x cols 的二维二进制矩阵，找出只包含 1 的最大矩形，并返回其面积。
+     *
+     * @param matrix
+     * @return
+     */
     public int maximalRectangle4(char[][] matrix) {
         if (matrix.length == 0) return 0;
 
@@ -440,6 +606,16 @@ public class Main {
         return maxArea;
     }
 
+    /**
+     * 581. 最短无序连续子数组
+     * <p>
+     * 给你一个整数数组 nums ，你需要找出一个 连续子数组 ，如果对这个子数组进行升序排序，那么整个数组都会变为升序排序。
+     * <p>
+     * 请你找出符合题意的 最短 子数组，并输出它的长度。
+     *
+     * @param nums
+     * @return
+     */
     public int findUnsortedSubarray(int[] nums) {
         // right为最后一个递增最左边，left为第一个递增的最右边，
         int n = nums.length;
@@ -460,6 +636,15 @@ public class Main {
         return right == -1 ? 0 : right - left + 1;
     }
 
+    /**
+     * 739. 每日温度
+     * <p>
+     * 提示
+     * 给定一个整数数组 temperatures ，表示每天的温度，返回一个数组 answer ，其中 answer[i] 是指对于第 i 天，下一个更高温度出现在几天后。如果气温在这之后都不会升高，请在该位置用 0 来代替。
+     *
+     * @param temperatures
+     * @return
+     */
     public int[] dailyTemperatures(int[] temperatures) {
         int[] ans = new int[temperatures.length];
         //递减一直放入栈中
