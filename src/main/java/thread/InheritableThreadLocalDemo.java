@@ -17,8 +17,8 @@ public class InheritableThreadLocalDemo {
     public static InheritableThreadLocal inheritableThreadLocal = new InheritableThreadLocal();
 
     public static void main(String[] args) throws InterruptedException {
-        demo();
-//        problem();
+//        demo();
+        problem();
 //        deal();
     }
 
@@ -43,26 +43,26 @@ public class InheritableThreadLocalDemo {
 
         ExecutorService executorService = Executors.newFixedThreadPool(2);
         executorService.submit(() -> {
-            System.out.println("子线程 start");
-            System.out.println("子线程 read：-----" + inheritableThreadLocal.get());
-            System.out.println("子线程 end");
+            System.out.println("子线程0 start");
+            System.out.println("子线程0 read：-----" + inheritableThreadLocal.get());
+            System.out.println("子线程0 end");
         });
 
         Thread.sleep(1000);
         inheritableThreadLocal.set("csc1");
         executorService.submit(() -> {
-            System.out.println("子线程 start");
-            System.out.println("子线程 read：-----" + inheritableThreadLocal.get());
-            System.out.println("子线程 end");
+            System.out.println("子线程1 start");
+            System.out.println("子线程1 read：-----" + inheritableThreadLocal.get());
+            System.out.println("子线程1 end");
         });
 
         Thread.sleep(1000);
         inheritableThreadLocal.set("csc2");
         executorService.submit(() -> {
-            System.out.println("子线程 start");
+            System.out.println("子线程2 start");
             // 打印为csc0,而不是csc2
-            System.out.println("子线程 read：-----" + inheritableThreadLocal.get());
-            System.out.println("子线程 end");
+            System.out.println("子线程2 read：-----" + inheritableThreadLocal.get());
+            System.out.println("子线程2 end");
         });
 
         System.out.println("主线程 sleep");
